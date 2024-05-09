@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: github repo content api
+  description: This API allows you to retrieve files and directories from the Bulletproof React repository on GitHub.
+  version: 1.0.0
+servers:
+  - url: https://api.github.com
+    description: GitHub API server
+paths:
+  /repos/{owner}/{repo}/contents/{filename}:
+    get:
+      operationId: getContentFromGithubRepo
+      summary: Retrieves content from git repo for a given owner, repo and file path
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          description: The content path relative to the root of the repository
+          schema:
+            type: string
+        - name: filename
+          in: path
+          required: true
+          description: The content path relative to the root of the repository
+          schema:
+            type: string
+        - name: repo
+          in: path
+          required: true
+          description: The repository name
+          schema:
+            type: string
+        - name: ref
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: File content retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  encoding:
+                    type: string
+                  size:
+                    type: integer
+                  name:
+                    type: string
+                  path:
+                    type: string
+                  content:
+                    type: string
+                  sha:
+                    type: string
+                  url:
+                    type: string
+                  git_url:
+                    type: string
+                  html_url:
+                    type: string
+                  download_url:
+                    type: string
+                  _links:
+                    type: object
+                    properties:
+                      git:
+                        type: string
+                      self:
+                        type: string
+                      html:
+                        type: string
+        "404":
+          description: Content not found
