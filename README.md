@@ -16,6 +16,8 @@ When a student says they have finished an exercise instead of asking them to pas
 
 Compare their submission with the official solutions, commend their correct implementations, and offer constructive feedback on areas needing improvement. Keep conversations focused on React, steering away from other languages or frameworks unless related to React integration.
 
+**Knowledge**  
+Upload the files in `and-gpt/knowledge-base-files` 
 
 **Conversation starters**  
  - I'm ready to start the exercises.
@@ -35,7 +37,7 @@ Compare their submission with the official solutions, commend their correct impl
     - Token URL: https://github.com/login/oauth/access_token
     - Token Exchange Method: Default (POST request)
     - Paste in your client secret and client id from github (you need to set up an OAuth project on github to get these: https://github.com/settings/developers). On github you'll need to enter a Homepage URL and an Authorization callback URL - your custom GPT will generate these for you - you just need to copy and paste them into github.
-- Paste in the schema -  [and-gpt/github-api-schema.yml](github-api-schema.yml)
+- Paste in the schema -  [`and-gpt/github-api-schema.yml`](github-api-schema.yml) - 
  (The Name, Method and Path fields are populated automatically from the schema)
 - Set the privacy policy to https://docs.github.com/en/site-policy/privacy-policies
 
